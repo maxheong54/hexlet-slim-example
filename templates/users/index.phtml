@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <a href="/users/new">Add new user</a>
+    <?php if (!empty($flash['success'])): ?>
+        <div class="flash">
+            <?= htmlspecialchars($flash['success'][0]) ?>tm
+        </div>
+    <?php endif; ?>
+    <?php foreach ($users as $user): ?>
+        <div>
+        <?= $user['nickname'] ?> <?= $user['nickname'] ? ':' : '' ?> <?= $user['email'] ?>
+        </div>
+    <?php endforeach ?>
+</body>
+</html>

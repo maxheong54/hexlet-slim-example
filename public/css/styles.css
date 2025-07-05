@@ -1,0 +1,24 @@
+.Head {
+    font-size: 2em;
+    border-bottom: 2px solid rgb(144, 135, 135);
+    padding: 0px;
+    margin: 20px;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid rgb(144, 135, 135);
+    font-weight: bold;
+}
+
+.errors {
+    font-size: 15px;
+    margin-left: 45px;
+    color: red;
+}
+
+.f404 {
+    font-size: 150px;
+    color: blueviolet;
+    background-color: beige;
+}

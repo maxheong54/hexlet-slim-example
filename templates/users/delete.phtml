@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete user</title>
+</head>
+<body>
+    <div>
+        <a href="/users">All Users</a>
+    </div>
+    <div>
+        <p>
+            Nickname: <?= htmlspecialchars($user['nickname'] ?? 'User not exists') ?>
+        </p>
+        <p>
+            Email: <?= htmlspecialchars($user['email'] ?? '') ?>
+        </p>
+    </div>
+    <div>
+        <form action="/users/<?= htmlspecialchars($user['id']) ?>" method="post">
+            <input type="hidden" name="_METHOD" value="DELETE">
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Edit User</title>
+</head>
+<body>
+    <div>
+        <a href="/users">All users</a>
+    </div>
+    <div>
+        <form action="/users/<?= htmlspecialchars($user['id']) ?>" method="post">
+            <input type="hidden" name="_METHOD" value="PATCH">
+            <div>
+                <label>
+                    Name:
+                    <input type="text" name="user[nickname]" value="<?= htmlspecialchars($user['nickname'] ?? '') ?>">
+                </label>
+                <?php if (isset($errors['nickname'])): ?>
+                    <div><?= $errors['nickname'] ?></div>
+                <?php endif ?>
+            </div>
+            <div>
+                <label>
+                    Email:
+                    <input type="text" name="user[email]" value="<?= htmlspecialchars($user['email'] ?? '') ?>">
+                </label>
+                <?php if (isset($errors['email'])): ?>
+                    <div><?= $errors['email'] ?></div>
+                <?php endif ?>
+            </div>
+            <input type="submit" value="Edit">
+        </form>
+    </div>
+</body>
+</html>

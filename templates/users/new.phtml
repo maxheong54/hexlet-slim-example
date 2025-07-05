@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Add New User</title>
+</head>
+<body>
+    <form action="/users" method="post">
+        <div class="Head">
+            <h1>New User</h1>
+        </div>
+        <div>
+            <label>
+                Nickname:
+                <input type="text" name="user[nickname]" value="<?= htmlspecialchars($user['nickname']) ?>">
+            </label>
+        </div>
+        <div class="errors">
+            <?= $errors['nickname'] ?? '<br>' ?>
+        </div>
+        <div>
+            <label>
+                Email:
+                <input type="email" name="user[email]" value="<?= htmlspecialchars($user['email']) ?>">
+            </label>
+        </div>
+        <div class="errors">
+            <?= $errors['email'] ?? '<br>' ?>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>
